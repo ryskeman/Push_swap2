@@ -6,14 +6,14 @@
 /*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 23:20:25 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/15 23:56:32 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:07:53 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Validate if number only accept one sign */
-int is_valid_number(char *s)
+int is_valid_num(char *s)
 {
     int i;
     
@@ -38,7 +38,7 @@ int exist_num_stack(int num, t_list *stack)
         return(0);
     while (stack)
     {
-        if (stack->content == number)
+        if (stack->content == num)
             return (1);
         stack = stack->next;
     }
@@ -62,7 +62,7 @@ int fill_up_stack_a(t_list **stack, char **matrix)
             return (0);
         if (exist_num_stack(l_num, *stack))
             return (0);
-        new_node = ft_lstnew(long_number);
+        new_node = ft_lstnew(l_num);
         ft_lstadd_back(stack, new_node);
         i++;
     }
@@ -104,7 +104,7 @@ void    join_args(char **args, char **joined)
             *joined = ft_strdup(args[i]);
         else
         {
-            if (//is_string_empty_blank)
+            if (is_string_empty())
             {
                 free(*joined);
                 joined = NULL;

@@ -1,27 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 21:05:49 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/19 22:02:56 by fernafer         ###   ########.fr       */
+/*   Created: 2025/11/19 21:03:01 by fernafer          #+#    #+#             */
+/*   Updated: 2025/11/19 22:13:28 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst)
+static void	spand(size_t count, int found, const char *a, const char *s)
 {
-	t_list	*aux;
-
-	if (!lst)
-		return ;
-	while (*lst)
+	while (*s)
 	{
-		aux = (*lst)->next;
-		free(*lst);
-		*lst = aux;
+		while (*a)
+		{
+			if (*s == *a)
+			{
+				found = 1;
+				break ;
+			}
+			a++;
+		}
+		if (found)
+		{
+			count++;
+			s++;
+		}
+		else
+			break ;
 	}
+}
+
+size_t	ft_strspn(const char *s, const char *accept)
+{
+	int			found;
+	const char	*a;
+	size_t		count;
+
+	found = 0;
+	count = 0;
+	a = accept;
+	spand(count, found, a, s);
+	return (count);
 }

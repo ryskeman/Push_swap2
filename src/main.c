@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:09 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/15 23:17:14 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:47:53 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,3 +63,5 @@ int main(int ac, char **av)
     // Free stacks and matrix(&stack_a, &stack_b, numbers);
     return (0);
 }
+/* -------------> TESTER GUILLE <---------- */
+/* https://github.com/gumoreno-code/push_swap_guilletester */

@@ -6,7 +6,7 @@
 #    By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 21:40:38 by fernafer          #+#    #+#              #
-#    Updated: 2025/11/15 23:20:55 by fernafer         ###   ########.fr        #
+#    Updated: 2025/11/19 21:55:53 by fernafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,15 @@ LIBFT = $(LIBFT_DIR)/libft.a
 # --- SOURCES ---
 SRCS =  main.c \
 		args_validation.c \
-		
+		args_valida_aux.c \
+	# move_executor.c \
+	# put_moves.c \
+	# rotate_moves.c \
+	# sort_process_utils.c \
+	# sort_process.c \
+	# sort_utils.c \
+	# swap_moves.c \
+	# target_in_a_finder.c \
 
 
 SRC= $(addprefix src/, $(SRCS))

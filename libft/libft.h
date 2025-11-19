@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:47:24 by fernafer          #+#    #+#             */
-/*   Updated: 2025/10/29 23:14:48 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:06:54 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@
 #  define MAX_FD 1024
 # endif
 
-# include <stdint.h>
+# include <fcntl.h>
 # include <stdarg.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -49,6 +50,7 @@ int					ft_safe_atoi(const char *nptr, int *out);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, char *src, size_t size);
+size_t				ft_strspn(const char *s, const char *accept);
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
@@ -64,7 +66,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
-void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);

@@ -3,15 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+         #
+#    By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/10 18:28:59 by fernafer          #+#    #+#              #
-#    Updated: 2025/10/29 23:28:30 by fernafer         ###   ########.fr        #
+#    Updated: 2025/11/19 21:44:39 by fernafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # LIBRARY NAME
 NAME = libft.a
+OBJ_DIR = obj
 
 # COMPILATOR
 CC = cc
@@ -34,17 +35,13 @@ SOURCES = ft_isalpha.c ft_isalnum.c ft_isdigit.c ft_isascii.c ft_isprint.c \
 	  ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
 	  ft_putendl_fd.c ft_putnbr_fd.c ft_printf.c ft_formats_chars.c \
 	  ft_formats_ints.c ft_formats_hex.c ft_get_next_line.c ft_atoi_base.c \
+	  ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+	  ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+	  ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_strspn.c \
 
 # OBJECTS LIST CREATOR
-OBJS = $(SOURCES:.c=.o)
+OBJS	= $(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
 
-# BONUS SOURCES
-BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-	    ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	    ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
-
-# BONUS OBJS
-BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 # RULE TO CREATE THE LIBRARY
 $(NAME): $(OBJS)
@@ -54,30 +51,22 @@ $(NAME): $(OBJS)
 	@echo "✅ Compilation $(NAME) completed."
 	@echo "-----------------------------------------"
 
-# TARGET FOR BONUS OBJECTS
-bonus_objs: $(BONUS_OBJ)
-	@echo "🛠️ Compiling bonus objects..."
-
-# RULE TO UPDATE THE LIBRARY WITH BONUS OBJECTS
-bonus: $(NAME) bonus_objs
-	@echo "➕ Adding bonus objects to $(NAME)..."
-	@$(AR) $(NAME) $(BONUS_OBJ)
-	@echo "-----------------------------------------"
-	@echo "✅ Bonus features added to $(NAME)."
-	@echo "-----------------------------------------"
 
 # MAIN RULE: LIBFT.A CREATOR.
 all: $(NAME)
 
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
 # CREATOR OBJS RULE
-%.o: %.c $(HEADERS)
+$(OBJ_DIR)/%.o: %.c $(HEADERS) | $(OBJ_DIR)
 	@echo "⚙️ Compiling $< in $@"
 	$(CC) $(CFLAGS) $< -o $@
 
 # CLEAN RULE: DELETE OBJECT FILES
 clean:
 	@echo "🧹 Cleaning: Deleting objects files (*.o)..."
-	@rm -rf $(OBJS) $(BONUS_OBJ)
+	@rm -rf $(OBJ_DIR)
 	@echo "🧹 Cleaning completed."
 
 # FCLEAN RULE: DELETE OBJECT FILES AND LIBRARY
@@ -91,4 +80,4 @@ re: fclean all
 	@echo "🔄 Recompiling project..."
 
 # PHONY TARGETS
-.PHONY: all clean fclean re bonus bonus_objs
+.PHONY: all clean fclean re

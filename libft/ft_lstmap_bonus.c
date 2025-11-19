@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 21:30:56 by fernafer          #+#    #+#             */
-/*   Updated: 2025/04/20 00:55:23 by fernando         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:12:16 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			if (!new_node)
 			{
 				del(new_content);
-				ft_lstclear(&new_list, del);
+				ft_lstclear(&new_list);
 				return (NULL);
 			}
 			ft_lstadd_back(&new_list, new_node);
