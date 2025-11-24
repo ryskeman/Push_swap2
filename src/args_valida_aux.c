@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   args_valida_aux.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:09:06 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/19 22:11:29 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/24 23:25:47 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,26 @@ int	is_string_empty(char *s)
 			return (0);
 		s++;
 	}
-    return (1);
+	return (1);
+}
+
+/* Free stack and matrix */
+void	ft_free_stack(t_list **a, t_list **b, char **matrix)
+{
+	int	i;
+
+	i = 0;
+	if (matrix && matrix[i])
+	{
+		while (matrix[i])
+		{
+			free(matrix[i]);
+			i++;
+		}
+		free(matrix);
+	}
+	if (a && *a)
+		ft_lstclear(a);
+	if (b && *b)
+		ft_lstclear(b);
 }

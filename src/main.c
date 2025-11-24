@@ -3,65 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:09 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/19 21:47:53 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/24 23:25:23 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Print stack */
-void    ft_print_stack(t_list *stack)
+void	ft_print_stack(t_list *stack)
 {
-    while (stack)
-    {
-        ft_printf("%d\n", stack->content);
-        stack = stack->next;
-    }
+	while (stack)
+	{
+		ft_printf("%d\n", stack->content);
+		stack = stack->next;
+	}
 }
 
 /* Vaidate if stack is sorted */
-int stack_sorted(t_list *stack)
+int	stack_sorted(t_list *stack)
 {
-    while (stack && stack->next)
-    {
-        if(stack->content > stack->next->content)
-            return (0);
-        stack = stack->next;
-    }
-    return (1);
+	while (stack && stack->next)
+	{
+		if (stack->content > stack->next->content)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
 
 /* Main */
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    char    **numbers;
-    char    *joined;
-    t_list  *stack_a;
-    t_list  *stack_b;
+	char	**numbers;
+	char	*joined;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
-    numbers = NULL;
-    stack_a = NULL;
-    stack_b = NULL;
-    if (ac < 2)
-        ft_free_exit(numbers, &stack_a);
-    //join_args(av, &joined); Join Arguments function.
-    if (!joined || ft_strlen(joined) == 0 || ft_strspn(joined,
-            "\t\n\r\f\v") == ft_strlen(joined))
-        ft_free_exit(numbers, &stack_a);
-    numbers = ft_split(joined, ' ');
-    if (!numbers)
-        ft_free_exit(numbers, &stack_a);
-    //if (!fill stack_a)
-        ft_free_exit(numbers, &stack_a);
-    if (stack_sorted(stack_a))
-        exit(EXIT_SUCCESS);
-    // sort(&stack_a, &stack_b);
-    free(joined);
-    // Free stacks and matrix(&stack_a, &stack_b, numbers);
-    return (0);
+	numbers = NULL;
+	stack_a = NULL;
+	stack_b = NULL;
+	if (ac < 2)
+		ft_free_exit(numbers, &stack_a);
+	//join_args(av, &joined); Join Arguments function.
+	if (!joined || ft_strlen(joined) == 0 || ft_strspn(joined,
+			"\t\n\r\f\v") == ft_strlen(joined))
+		ft_free_exit(numbers, &stack_a);
+	numbers = ft_split(joined, ' ');
+	if (!numbers)
+		ft_free_exit(numbers, &stack_a);
+	//if (!fill stack_a)
+		ft_free_exit(numbers, &stack_a);
+	if (stack_sorted(stack_a))
+		exit(EXIT_SUCCESS);
+	// sort(&stack_a, &stack_b);
+	free(joined);
+	// Free stacks and matrix(&stack_a, &stack_b, numbers);
+	return (0);
 }
+
 /* -------------> TESTER GUILLE <---------- */
 /* https://github.com/gumoreno-code/push_swap_guilletester */

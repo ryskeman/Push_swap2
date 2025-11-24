@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:07 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/19 22:11:23 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/24 23:05:17 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	join_args(char **args, char **joined);
 
 /* arg_valida_aux.c */
 int		is_string_empty(char *s);
+void	ft_free_stack(t_list **a, t_list **b, char **matrix);
 
 /* main.c */
 void	ft_print_stack(t_list *stack);
