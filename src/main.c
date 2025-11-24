@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:09 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/24 23:25:23 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/25 00:21:26 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,20 @@ int	main(int ac, char **av)
 	stack_b = NULL;
 	if (ac < 2)
 		ft_free_exit(numbers, &stack_a);
-	//join_args(av, &joined); Join Arguments function.
+	join_args(av, &joined);
 	if (!joined || ft_strlen(joined) == 0 || ft_strspn(joined,
 			"\t\n\r\f\v") == ft_strlen(joined))
 		ft_free_exit(numbers, &stack_a);
 	numbers = ft_split(joined, ' ');
 	if (!numbers)
 		ft_free_exit(numbers, &stack_a);
-	//if (!fill stack_a)
+	if (!fill_up_stack_a(&stack_a, numbers))
 		ft_free_exit(numbers, &stack_a);
 	if (stack_sorted(stack_a))
 		exit(EXIT_SUCCESS);
 	// sort(&stack_a, &stack_b);
 	free(joined);
-	// Free stacks and matrix(&stack_a, &stack_b, numbers);
+	ft_free_stack(&stack_a, &stack_b, numbers);
 	return (0);
 }
 

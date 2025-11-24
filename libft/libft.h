@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:47:24 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/19 22:06:54 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/25 00:21:05 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				content;
+	int				pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
 	struct s_list	*next;
 }					t_list;
 
@@ -65,7 +69,7 @@ void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstdelone(t_list *lst);
 void				ft_lstclear(t_list **lst);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 char				*ft_strchr(const char *s, int c);
@@ -92,9 +96,8 @@ int					ft_print_hex(unsigned int num, int upper);
 int					ft_print_percent(void);
 int					ft_scan(const char *str, va_list va);
 
-t_list				*ft_lstnew(void *content);
+t_list				*ft_lstnew(int value);
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-						void (*del)(void *));
+t_list				*ft_lstmap(t_list *lst, int (*f)(int));
 
 #endif

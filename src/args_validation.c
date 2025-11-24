@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 23:20:25 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/24 23:24:07 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/25 00:17:01 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	fill_up_stack_a(t_list **stack, char **matrix)
 	i = 0;
 	while (matrix[i])
 	{
-		if (!is_valid_number(matrix[i]))
+		if (!is_valid_num(matrix[i]))
 			return (0);
 		l_num = ft_atoi(matrix[i]);
 		if (l_num < INT_MIN || l_num >= INT_MAX)
@@ -104,7 +104,7 @@ void	join_args(char **args, char **joined)
 			*joined = ft_strdup(args[i]);
 		else
 		{
-			if (is_string_empty())
+			if (is_string_empty(args[i]))
 			{
 				free(*joined);
 				joined = NULL;

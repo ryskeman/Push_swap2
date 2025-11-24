@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 21:24:26 by fernafer          #+#    #+#             */
-/*   Updated: 2025/04/20 00:39:16 by fernando         ###   ########.fr       */
+/*   Updated: 2025/11/25 00:08:50 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	if (lst && f)
 	{
 		while (lst)
-		{
-			f(lst->content);
 			lst = lst -> next;
-		}
 	}
 }
