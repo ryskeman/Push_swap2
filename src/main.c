@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:09 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/25 00:21:26 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/26 00:35:50 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int ac, char **av)
 		ft_free_exit(numbers, &stack_a);
 	if (stack_sorted(stack_a))
 		exit(EXIT_SUCCESS);
-	// sort(&stack_a, &stack_b);
+	sort(&stack_a, &stack_b);
 	free(joined);
 	ft_free_stack(&stack_a, &stack_b, numbers);
 	return (0);
