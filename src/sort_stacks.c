@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 21:37:47 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/26 00:36:03 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/27 00:23:02 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort(t_list	**a, t_list	**b)
 	if (ft_lstsize(*a) < 4)
 	{
 		if (ft_lstsize(*a) == 3)
-			//sort_three(a);
+			sort_three(a);
 		else
-			//sort_two(a);
+			sort_two(a);
 	}
 	else
 	{
@@ -28,11 +28,11 @@ void	sort(t_list	**a, t_list	**b)
 			put_in_stack(b, pop_stack(a), "pb\n");
 		while (ft_lstsize(*a) > 3)
 			put_a_to_b(a, b);
-		/* sort_three(a) */
+		sort_three(a);
 		while (*b)
 			put_b_to_a(b, a);
-		/* Asignar posicion */
-		/* Put minimun value on top */
+		/* assign_pos(a);*/
+		min_on_top(a);
 	}
 }
 
@@ -45,8 +45,8 @@ void	put_a_to_b(t_list **a, t_list **b)
 /* Processing B ordered to A */
 void	put_b_to_a(t_list **b, t_list **a)
 {
-	/* Asignar posicion (a);*/
-	/* Asignar posicion (b);*/
+	/* assign_pos(a); */
+	/* assign_pos(b); */
 	/* target_process(b, *a, 'b'); */
 	/* find_cost */
 	/* execute movements */
@@ -54,7 +54,7 @@ void	put_b_to_a(t_list **b, t_list **a)
 }
 
 /* Put minimun value on top */
-void	min_on_top()
+void	min_on_top(t_list **a)
 {
 	int	min_indx;
 	int	size;

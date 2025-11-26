@@ -6,7 +6,7 @@
 #    By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 21:40:38 by fernafer          #+#    #+#              #
-#    Updated: 2025/11/26 00:35:13 by fernafer         ###   ########.fr        #
+#    Updated: 2025/11/26 23:48:47 by fernafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS =  main.c \
 		rotate_moves.c \
 		sort_stacks.c \
 		swap_moves.c \
-	# sort_process_utils.c \
+		sort_stacks_utils.c \
 	# sort_utils.c \
 	# target_in_a_finder.c \
 

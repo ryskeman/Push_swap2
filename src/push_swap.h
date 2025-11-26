@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:07 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/26 00:34:16 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/27 00:25:42 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,13 @@ void	rotate_stack(t_list	**stack, char *movement);
 void	rotate_two_stacks(t_list **stack_a, t_list **stack_b);
 void	reverse_rotate_stack(t_list	**stack, char *movement);
 void	same_reverse_rotate(t_list **stack_a, t_list **stack_b);
-/* sort_process_utils.c */
+
+/* sort_stacks_utils.c */
+int		maximum(int a, int b);
+int		absolute_val(int num);
+void	sort_two(t_list	**stack);
+void	sort_three(t_list **stack);
+t_list	*pop(t_list **stack);
 
 /* sort_stacks.c */
 void	sort(t_list	**a, t_list	**b);
