@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:07 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/28 12:49:28 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/28 13:11:31 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		main(int ac, char **av);
 
 /* movements.c */
 void	exec_movements(t_list **stack_from, t_list **stack_to, t_list *node,
-		char move);
+			char move);
 void	handle_moves(t_list **a, t_list **b, t_list *node);
 void	ft_rrr(t_list **a, t_list **b, t_list *node);
 void	ft_rr(t_list **a, t_list **b, t_list *node);
@@ -73,7 +73,8 @@ void	swap_at_same(t_list **stack_a, t_list **stack_b);
 
 /* target_finder.c */
 int		find_pos(t_list *stack);
-int		target_position(t_list *node_cmp, t_list *lst_cmp, char from, int target_pos);
+int		target_position(t_list *node_cmp, t_list *lst_cmp,
+			char from, int target_pos);
 void	calculate_target(t_list **list, t_list *node, char from);
 
 #endif

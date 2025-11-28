@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:22:57 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/28 12:55:01 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/28 13:11:09 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,21 @@ int	find_pos(t_list *stack)
 }
 
 /* Find node's target */
-int	target_position(t_list *node_cmp, t_list *lst_cmp, char from, int target_pos)
+int	target_position(t_list *node_cmp, t_list *lst_cmp, char from,
+			int target_pos)
 {
 	t_list	*head;
 	int		match;
 
-	if (from == 'a');
+	if (from == 'a')
 		match = INT_MIN;
 	else
 		match = INT_MAX;
 	head = lst_cmp;
 	while (head)
 	{
-		if (from == 'a' && head->content < node_cmp->content && head->content > match)
+		if (from == 'a' && head->content < node_cmp->content
+			&& head->content > match)
 		{
 			match = head->content;
 			target_pos = head->pos;
