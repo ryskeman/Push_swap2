@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:07 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/28 01:06:19 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:49:28 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_rrr(t_list **a, t_list **b, t_list *node);
 void	ft_rr(t_list **a, t_list **b, t_list *node);
 
 /* put_moves.c */
-void	put_in_stack(t_list **stack, t_list **node, char *movement);
+void	put_in_stack(t_list **stack, t_list *node, char *movement);
 
 /* rotate_moves.c */
 void	rotate_stack(t_list	**stack, char *movement);
@@ -51,13 +51,13 @@ int		maximum(int a, int b);
 int		absolute_val(int num);
 void	sort_two(t_list	**stack);
 void	sort_three(t_list **stack);
-t_list	*pop(t_list **stack);
+t_list	*pop_stack(t_list **stack);
 
 /* sort_stacks.c */
 void	sort(t_list	**a, t_list	**b);
 void	put_a_to_b(t_list **a, t_list **b);
 void	put_b_to_a(t_list **b, t_list **a);
-void	min_on_top();
+void	min_on_top(t_list **a);
 void	find_cost(t_list **node, int first_size, int second_size, char from);
 
 /* sort_calculations.c */
@@ -71,6 +71,9 @@ void	find_cost_aux(char from, t_list *head, int first_size, int second_size);
 void	swap_two_on_top(t_list **stack, char *movement);
 void	swap_at_same(t_list **stack_a, t_list **stack_b);
 
-/* target_in_a_finder.c */
+/* target_finder.c */
+int		find_pos(t_list *stack);
+int		target_position(t_list *node_cmp, t_list *lst_cmp, char from, int target_pos);
+void	calculate_target(t_list **list, t_list *node, char from);
 
 #endif

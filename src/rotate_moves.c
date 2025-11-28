@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 00:15:19 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/26 00:31:10 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:06:30 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	reverse_rotate_stack(t_list	**stack, char *movement)
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	aux = stack;
+	aux = *stack;
 	while (aux && aux->next->next)
 		aux = aux->next;
 	last = aux->next;

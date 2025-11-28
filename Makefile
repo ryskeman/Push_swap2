@@ -6,7 +6,7 @@
 #    By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 21:40:38 by fernafer          #+#    #+#              #
-#    Updated: 2025/11/28 00:09:50 by fernafer         ###   ########.fr        #
+#    Updated: 2025/11/28 11:22:26 by fernafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS =  main.c \
 		swap_moves.c \
 		sort_stacks_utils.c \
 		sort_calculations.c \
-	# target_in_a_finder.c \
+		target_finder.c \
 
 
 SRC= $(addprefix src/, $(SRCS))

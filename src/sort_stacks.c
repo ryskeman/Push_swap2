@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 21:37:47 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/27 23:56:27 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:48:50 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sort(t_list	**a, t_list	**b)
 		sort_three(a);
 		while (*b)
 			put_b_to_a(b, a);
-		/* assign_pos(a);*/
+		assign_pos(a);
 		min_on_top(a);
 	}
 }
@@ -39,18 +39,18 @@ void	sort(t_list	**a, t_list	**b)
 /* Processing A to B */
 void	put_a_to_b(t_list **a, t_list **b)
 {
-	put_in_stack(b, pop(a), "pb\n");
+	put_in_stack(b, pop_stack(a), "pb\n");
 }
 
 /* Processing B ordered to A */
 void	put_b_to_a(t_list **b, t_list **a)
 {
-	/* assign_pos(a); */
-	/* assign_pos(b); */
-	/* target_process(b, *a, 'b'); */
+	assign_pos(a);
+	assign_pos(b);
+	calculate_target(b, *a, 'b');
 	find_cost(b, ft_lstsize(*b), ft_lstsize(*a), 'b');
 	exec_movements(b, a, find_lowest_cost(*b), 'b');
-	put_in_stack(a, pop(b), "pa\n");
+	put_in_stack(a, pop_stack(b), "pa\n");
 }
 
 /* Put minimun value on top */
@@ -60,7 +60,7 @@ void	min_on_top(t_list **a)
 	int	size;
 	int	i;
 
-	min_indx = find_min(*a);
+	min_indx = find_min_index(*a);
 	size = ft_lstsize(*a);
 	if (min_indx <= size / 2)
 		while (min_indx-- > 0)
@@ -69,7 +69,7 @@ void	min_on_top(t_list **a)
 	{
 		i = size - min_indx;
 		while (i-- > 0)
-			reverse_rotate(a, "rra\n");
+			reverse_rotate_stack(a, "rra\n");
 	}
 }
 
@@ -81,7 +81,7 @@ void	find_cost(t_list **node, int first_size, int second_size, char from)
 	head = *node;
 	while (head)
 	{
-		calculate_cost(from, head, first_size, second_size);
+		find_cost_aux(from, head, first_size, second_size);
 		head = head->next;
 	}
 }

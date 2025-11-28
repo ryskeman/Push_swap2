@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 23:55:48 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/26 00:06:00 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:53:47 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	swap_two_on_top(t_list **stack, char *movement)
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	first = stack;
+	first = *stack;
 	second = first->next;
 	first->next = second->next;
 	second->next = first;
