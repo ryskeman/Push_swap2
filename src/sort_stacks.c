@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 21:37:47 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/27 00:23:02 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/27 23:56:27 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	put_b_to_a(t_list **b, t_list **a)
 	/* assign_pos(a); */
 	/* assign_pos(b); */
 	/* target_process(b, *a, 'b'); */
-	/* find_cost */
-	/* execute movements */
+	find_cost(b, ft_lstsize(*b), ft_lstsize(*a), 'b');
+	exec_movements(b, a, find_lowest_cost(*b), 'b');
 	put_in_stack(a, pop(b), "pa\n");
 }
 

@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:07 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/27 00:25:42 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/28 01:06:19 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int		stack_sorted(t_list *stack);
 int		main(int ac, char **av);
 
 /* movements.c */
+void	exec_movements(t_list **stack_from, t_list **stack_to, t_list *node,
+		char move);
+void	handle_moves(t_list **a, t_list **b, t_list *node);
+void	ft_rrr(t_list **a, t_list **b, t_list *node);
+void	ft_rr(t_list **a, t_list **b, t_list *node);
 
 /* put_moves.c */
 void	put_in_stack(t_list **stack, t_list **node, char *movement);
@@ -55,7 +60,12 @@ void	put_b_to_a(t_list **b, t_list **a);
 void	min_on_top();
 void	find_cost(t_list **node, int first_size, int second_size, char from);
 
-/* sort_utils.c */
+/* sort_calculations.c */
+t_list	*find_lowest_cost(t_list *stack);
+int		find_min_index(t_list *node);
+int		find_max_indx(t_list *node);
+void	assign_pos(t_list **stack);
+void	find_cost_aux(char from, t_list *head, int first_size, int second_size);
 
 /* swap_moves.c */
 void	swap_two_on_top(t_list **stack, char *movement);

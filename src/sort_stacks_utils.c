@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 23:49:31 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/27 00:23:35 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/28 01:01:18 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	sort_three(t_list **stack)
 {
 	int	max_pos;
 
-	//assign_pos(stack);
-	max_pos = //find_max_indx(*stack);
+	assign_pos(stack);
+	max_pos = find_max_indx(*stack);
 	if (max_pos == 0)
 		rotate_stack(stack, "ra\n");
 	else if (max_pos == 1)
