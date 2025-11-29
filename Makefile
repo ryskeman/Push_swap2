@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+         #
+#    By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 21:40:38 by fernafer          #+#    #+#              #
-#    Updated: 2025/11/28 11:22:26 by fernafer         ###   ########.fr        #
+#    Updated: 2025/11/29 12:43:06 by fernafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

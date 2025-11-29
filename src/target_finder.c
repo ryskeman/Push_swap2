@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   target_finder.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:22:57 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/29 01:36:46 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/29 12:59:24 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ int	target_position(t_list *node_cmp, t_list *lst_cmp, char from,
 	head = lst_cmp;
 	while (head)
 	{
-		if (from == 'a' && head->content < node_cmp->content
-			&& head->content > match)
+		if (from == 'a' && (head->content < node_cmp->content
+			&& head->content > match))
 		{
 			match = head->content;
 			target_pos = head->pos;
