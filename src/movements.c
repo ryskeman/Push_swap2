@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 23:42:15 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/27 23:52:55 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/29 17:31:47 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	handle_moves(t_list **a, t_list **b, t_list *node)
 	else
 		while (node->cost_a++ < 0)
 			reverse_rotate_stack(a, "rra\n");
-	if (node->cost_b-- > 0)
+	if (node->cost_b > 0)
 		while (node->cost_b-- > 0)
 			rotate_stack(b, "rb\n");
 	else
