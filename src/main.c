@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:09 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/26 00:35:50 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/29 11:41:11 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int	main(int ac, char **av)
 	numbers = NULL;
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac < 2)
-		ft_free_exit(numbers, &stack_a);
+	if (ac < 2 || av[1][0] == '\0')
+		return (0);
 	join_args(av, &joined);
 	if (!joined || ft_strlen(joined) == 0 || ft_strspn(joined,
 			"\t\n\r\f\v") == ft_strlen(joined))
