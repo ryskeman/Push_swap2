@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:22:57 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/28 13:11:09 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/29 01:36:46 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int	target_position(t_list *node_cmp, t_list *lst_cmp, char from,
 			match = head->content;
 			target_pos = head->pos;
 		}
-		else if (from == 'b' && (head->content > node_cmp->content))
+		else if (from == 'b' && (head->content > node_cmp->content
+			&& head->content < match))
 		{
 			match = head->content;
 			target_pos = head->pos;

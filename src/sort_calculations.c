@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 23:59:54 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/28 01:05:47 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/29 01:29:03 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	find_min_index(t_list *node)
 	t_list	*tmp;
 
 	tmp = node;
+	min = tmp->content;
+	indx = 0;
 	while (tmp)
 	{
 		if (tmp->content < min)
