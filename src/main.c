@@ -6,7 +6,7 @@
 /*   By: fernafer <fernafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:52:09 by fernafer          #+#    #+#             */
-/*   Updated: 2025/11/29 12:30:42 by fernafer         ###   ########.fr       */
+/*   Updated: 2025/11/29 17:54:51 by fernafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,3 @@ int	main(int ac, char **av)
 	return (0);
 }
 
-/* -------------> TESTER GUILLE <---------- */
-/* https://github.com/gumoreno-code/push_swap_guilletester */
