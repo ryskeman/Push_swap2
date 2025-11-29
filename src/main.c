@@ -63,4 +63,3 @@ int	main(int ac, char **av)
 	ft_free_stack(&stack_a, &stack_b, numbers);
 	return (0);
 }
-
